@@ -1,7 +1,10 @@
 .projects-section {
   padding: 10rem 0;
+  background: linear-gradient(to top, $black 0%,#{fade-out($black, .1)} 75%,#{fade-out($black, .2)} 100%);
+  color: #FFFFFF;
   .featured-text {
     padding: 2rem;
+    color: #e9e9e9 !important;
     @media (min-width: 992px) {
       padding: 0 0 0 2rem;
       border-left: 0.5rem solid $primary;
