@@ -1,5 +1,5 @@
 "use strict";
-
+ghpages = require('gulp-gh-pages');
 // Load plugins
 const autoprefixer = require("gulp-autoprefixer");
 const browsersync = require("browser-sync").create();
@@ -119,6 +119,11 @@ function watchFiles() {
   gulp.watch("./scss/**/*", css);
   gulp.watch(["./js/**/*", "!./js/**/*.min.js"], js);
   gulp.watch("./**/*.html", browserSyncReload);
+}
+
+gulp.task('deploy', function() {
+  return gulp.src(options.dist + '**/*')
+             .pipe(ghpages());
 }
 
 // Define complex tasks
